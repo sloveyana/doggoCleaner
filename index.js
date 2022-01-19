@@ -40,7 +40,7 @@ client.on('interactionCreate', async interaction => {
   const { commandName } = interaction;
   const hasEveryoneRole = (role) => role.name === '@everyone';
   const hasMembersRole = (role) => role.name === 'Members';
-  if (commandName === 'cleanup') {
+  if (commandName === 'dogcage') {
     if(!interaction.member.permissions.has("ADMINISTRATOR")) return await interaction.editReply({ content: 'You do not have permission to execute this command', ephemeral: true });
   let discordMembersToKick = [];
   interaction.guild.members.fetch().then(async (members) => {
