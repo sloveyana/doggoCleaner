@@ -74,8 +74,11 @@ client.on('interactionCreate', async interaction => {
         const collector = interaction.channel.createMessageComponentCollector({max: 1, time: 600000});
         collector.on('collect', async i => {
           console.log("kick members")
-          await Promise.all(discordMembersToKick.map(async (member) => {
+          await Promise.all(discordMembersToKick.map(async (member, index) => {
+            setTimeout(() => {
+                  // do stuff function with item
               await member.kick();
+                     }, 60000*index )
           }));
           interaction.editReply({ ephemeral: true, embeds: [cleanupEmbedFinish(obj.count)], components: []})
         });
