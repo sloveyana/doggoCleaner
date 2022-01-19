@@ -4,7 +4,7 @@ const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json');
 
 const commands = [
-    new SlashCommandBuilder().setName('cleanup').setDescription('list all unverified members without role!'),
+    new SlashCommandBuilder().setName('dogcage').setDescription('list all unverified members without role!'),
 ]
   .map(command => command.toJSON());
 
