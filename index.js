@@ -75,7 +75,7 @@ client.on('interactionCreate', async interaction => {
         collector.on('collect', async i => {
           console.log("kick members")
           await Promise.all(discordMembersToKick.map(async (member, index) => {
-            setTimeout(() => {
+            setTimeout(async () => {
                   // do stuff function with item
               await member.kick();
                      }, 60000*index )
